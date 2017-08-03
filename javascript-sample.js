@@ -1,23 +1,30 @@
 ((state, timeLeftFn) => {
-    const turnDirections = ['right', 'left', 'about-face'];
-    const turnDirection = turnDirections[Math.floor(Math.random() * 3)];
+    // const turnDirections = ['right', 'left', 'about-face'];
+    // const turnDirection = turnDirections[Math.floor(Math.random() * 3)];
 
-    const smokeDirections = ['forward', 'backward', 'left', 'right', 'drop'];
-    const smokeDirection = smokeDirections[Math.floor(Math.random() * 5)];
+    // const smokeDirections = ['forward', 'backward', 'left', 'right', 'drop'];
+    // const smokeDirection = smokeDirections[Math.floor(Math.random() * 5)];
 
-    const index = Math.floor(Math.random() * 17);
-    const command = index < 10 ?
-        { action: 'move', metadata: {} } :
-        index < 12 ?
-            { action: 'turn', metadata: { direction: turnDirection } } :
-            index < 16 ?
-                { action: 'shoot', metadata: {} } :
-                { action: 'smoke', metadata: { direction: smokeDirection } };
+    // const index = Math.floor(Math.random() * 17);
+
+    // const command = index < 10 ?
+    //     { action: 'move', metadata: {} } :
+    //     index < 12 ?
+    //         { action: 'turn', metadata: { direction: turnDirection } } :
+    //         index < 16 ?
+    //             { action: 'shoot', metadata: {} } :
+    //             { action: 'smoke', metadata: { direction: smokeDirection } };
+    const saveState = state["saved-state"]
+    const previousAction = saveState['previous-command']
+    switch (previousAction) {
+
+    }
+    const command = { action: 'shoot', metadata: {} }
 
     return {
-        command,
+        command: command,
         state: {
-            hello: 'wuld'
+            'previous-command': command[action]
         }
     };
 });
