@@ -17,7 +17,7 @@
     return {
         command,
         state: {
-            hello: 'world'
+            hello: 'wuld'
         }
     };
 });
