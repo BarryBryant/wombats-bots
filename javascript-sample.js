@@ -16,9 +16,6 @@
     //             { action: 'smoke', metadata: { direction: smokeDirection } };
     const saveState = state["saved-state"]
     const previousAction = saveState['previous-command']
-    switch (previousAction) {
-
-    }
     const shoot = { action: 'shoot', metadata: {} }
     const turn = { action: 'turn', metadata: { direction: 'right' } }
     const smoke = { action: 'smoke', metadata: { direction: 'foward' } }
