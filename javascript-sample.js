@@ -14,24 +14,25 @@
     //         index < 16 ?
     //             { action: 'shoot', metadata: {} } :
     //             { action: 'smoke', metadata: { direction: smokeDirection } };
-    const saveState = state["saved-state"]
-    const previousAction = saveState['previous-command']
-    const shoot = { action: 'shoot', metadata: {} }
-    const turn = { action: 'turn', metadata: { direction: 'right' } }
-    const smoke = { action: 'smoke', metadata: { direction: 'foward' } }
-    const command
+    const saveState = state["saved-state"];
+    const previousAction = saveState['previous-command'];
+    const shoot = { action: 'shoot', metadata: {} };
+    const turn = { action: 'turn', metadata: { direction: 'right' } };
+    const smoke = { action: 'smoke', metadata: { direction: 'foward' } };
+    let command;
+
     switch(previousAction) {
         case 'shoot':
-            command = turn
-            break
+            command = turn;
+            break;
         case 'turn':
-            command = smoke
-            break
+            command = smoke;
+            break;
         case 'smoke':
-            command = shoot
-            break
+            command = shoot;
+            break;
         default:
-            command = shoot
+            command = shoot;
     }
 
     return {
