@@ -19,7 +19,20 @@
     switch (previousAction) {
 
     }
-    const command = { action: 'shoot', metadata: {} }
+    const shoot = { action: 'shoot', metadata: {} }
+    const turn = { action: 'turn', metadata: { direction: 'right' } }
+    const smoke = { action: 'smoke', metadata: { direction: 'foward' } }
+    const command
+    switch (previousAction) {
+        case 'shoot':
+            command = turn
+        case 'turn':
+            command = smoke
+        case 'smoke':
+            command = shoot
+        default:
+            command = shoot
+    }
 
     return {
         command: command,
