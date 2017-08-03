@@ -20,7 +20,7 @@
     const turn = { action: 'turn', metadata: { direction: 'right' } }
     const smoke = { action: 'smoke', metadata: { direction: 'foward' } }
     const command
-    switch (previousAction) {
+    switch(previousAction) {
         case 'shoot':
             command = turn
             break
