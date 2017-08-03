@@ -26,10 +26,13 @@
     switch (previousAction) {
         case 'shoot':
             command = turn
+            break
         case 'turn':
             command = smoke
+            break
         case 'smoke':
             command = shoot
+            break
         default:
             command = shoot
     }
