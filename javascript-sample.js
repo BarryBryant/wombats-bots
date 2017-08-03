@@ -47,7 +47,7 @@
     return {
         command: command,
         state: {
-            'previous-command': command[action]
+            'previous-command': command['action']
         }
     };
 });
