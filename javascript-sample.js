@@ -5,6 +5,12 @@
             'previous-command': 'shoot'
         }
     }
+    function httpGet(theUrl) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        console.log("SUP")
+    }
     // const turnDirections = ['right', 'left', 'about-face'];
     // const turnDirection = turnDirections[Math.floor(Math.random() * 3)];
 
